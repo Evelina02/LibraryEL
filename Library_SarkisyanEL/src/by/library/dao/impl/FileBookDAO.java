@@ -39,7 +39,6 @@ public class FileBookDAO implements BookDAO{
         	}catch(IOException ex) {
             	throw new BookDAOException("Error during closing buffer!", ex);
         	}
-        	
         }
    	}
 

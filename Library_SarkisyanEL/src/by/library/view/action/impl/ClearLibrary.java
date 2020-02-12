@@ -1,7 +1,6 @@
 package by.library.view.action.impl;
 
 import by.library.bean.Library;
-import by.library.controller.exception.ControllerException;
 import by.library.dao.exception.DAOException;
 import by.library.view.action.Action;
 import by.library.view.exception.ViewException;
