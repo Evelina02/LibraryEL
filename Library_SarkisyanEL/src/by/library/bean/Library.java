@@ -11,7 +11,8 @@ public class Library implements Serializable{
 	
 	private static final long serialVersionUID = 2L;
 
-	private static Library library;
+	private static Library library;// зачем библиотеку синглтоном делаешь?
+	// обговаривали же, что каждому методу в дао нужно будет самостоятельно в источник лазить
 	private ArrayList<Book> books;
 	
 	private Library(ArrayList<Book> books) {
@@ -51,7 +52,8 @@ public class Library implements Serializable{
         else 
         	throw new BookDAOException("Such book is already exists!");
 	}
-	
+	// плюс опять логики написала
+	// мне остается только спрашивать - где были уши и глова на первом занятии?
 	public void deleteBookFromLibrary(Book book) throws BookDAOException{
 		
 		Book deleted = null;
