@@ -19,7 +19,7 @@ public class ClientServiceImpl implements ClientService{
 	@Override
 	public User signIn(String login, String password) throws UserServiceException
 	{
-		if(login == null || login.isEmpty())
+		if(login == null || login.isEmpty())// где {}, про code convention я для кого рассказывала
 			throw new UserServiceException("Error during logging in: incorrect login");
 		
 		if(password == null || password.isEmpty())
@@ -44,7 +44,8 @@ public class ClientServiceImpl implements ClientService{
 	            }
 	        
 	        }
-	       throw new UserServiceException("Wrong login or password!!");
+	       throw new UserServiceException("Wrong login or password!!");// т.е. если пользователя с каким-то определенным логим и паролем нет в системе - это ошибка?
+			// это так бросаться исключениями, если в библиоете не будет нужной для тебя книги
 	        
 		}catch(DAOException e) {
 			throw new UserServiceException("Error during logging in ", e);

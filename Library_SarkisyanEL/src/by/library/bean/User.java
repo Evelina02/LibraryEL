@@ -69,11 +69,12 @@ public class User implements Serializable{
     {
     	this.isSignedIn = false;
     }
-    
+    // зачем логику в бин добавляешь, мы же не pojo делаем?
 	public void register(User user) throws UserServiceException
 	{
 		try {
-			DAOFactory daoFactory = DAOFactory.getInstance();
+			DAOFactory daoFactory = DAOFactory.getInstance();// а еще и в дао лезешь
+			// получается, это объект можно передать куда угодно, и откуда угодно дернуть дао - в чем великий сакральный смысл такого тода тогда?
 			UserDAO userDAO = daoFactory.getUserDAO();
 			
 			ArrayList<User> users = userDAO.getAllUsers();
@@ -98,6 +99,7 @@ public class User implements Serializable{
 		}
 	}
 	
+	// о, мы и статическими методами обрасли
 	public static User getUserByLogin(String login) throws UserServiceException
 	{
 		try {

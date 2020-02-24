@@ -16,7 +16,7 @@ public class Registration implements Command {
 
 	@Override
 	public String execute(String request) throws ControllerException{
-		//������ ������: register--name--login--password--type
+		//Ôîðìàò ñòðîêè: register--name--login--password--type
     	
 		if(request == null || request.isEmpty())
 			throw new ControllerException("Error! Incorrect request");
@@ -39,7 +39,7 @@ public class Registration implements Command {
 			response = "Welcome" + "--" + name + "--" + login;
 			
 		}  catch(UserServiceException e) {
-			response = "Error during registration";
+			response = "Error during registration";// ну и зачем мы в response что-то пишем, если потом все-равно бросаем исключение и это строку не используем?
 			throw new ControllerException("Error!", e);
 		}
 		return response;
